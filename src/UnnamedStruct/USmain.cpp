@@ -1,13 +1,13 @@
 #include "fpcsc/perf_util/feature_cmd.h"
 #include "fpcsc/perf_util/sleep.h"
 
-typedef struct {
+struct Config {
   bool slow1;
   bool slow2;
-} Config;
+};
 
 int main(int argc, char *argv[]) {
-  Config config;
+  struct Config config;
   config.slow1 = fpcsc::isFeatureEnabled(argc, argv, "--slow1");
   config.slow2 = fpcsc::isFeatureEnabled(argc, argv, "--slow2");
 
